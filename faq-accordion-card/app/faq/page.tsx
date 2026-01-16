@@ -1,6 +1,6 @@
-import Question from '../components/Question'
 import Image from "next/image";
 import { Kumbh_Sans } from 'next/font/google';
+import FAQList from "../components/FAQList";
 
 const kumbSansFont = Kumbh_Sans({
     subsets: ["latin"],
@@ -9,33 +9,29 @@ const kumbSansFont = Kumbh_Sans({
 
 const page = () => {
     return (
-        <div className='h-screen bg-linear-to-t from-[#6463E7] to-[#B068E9] flex justify-center items-center'>
-            <div className='w-230 h-127.25 rounded-[23px] bg-[#FFFFFF] drop-shadow-[0_50px_50px_#35127A7F] flex'>
-                <div className='w-[50%] relative overflow-hidden'>
-                    <Image src="/line.svg" alt="file" width={500} height={400} className='absolute z-2 left-[-40px]' />
-                    <Image src="/line.svg" alt="file" width={500} height={400} className='absolute z-2 -top-20 -left-10' />
-                    <Image src="/illustration.svg" alt="file" width={472} height={359} className='absolute z-2 top-17.5 -left-10' />
-                    <Image src="/shadow.svg" alt="file" width={964} height={568} className='absolute z-1 top-20.5 -left-10' />
-                </div>
-                <Image src="/box.svg" alt="file" width={200} height={106} className='absolute z-3 top-55 -left-24.25' />
+        <div className='min-h-dvh bg-linear-to-t from-[#6463E7] to-[#B068E9] flex justify-center items-center'>
+            <div className='lg:w-230 w-81.75 lg:h-127.25 h-133.75 rounded-[23px] bg-[#FFFFFF] drop-shadow-[0_50px_50px_#35127A7F] lg:flex lg:m-0 m-[150px_0px_70px_0px]'>
 
-                <div className='border border-amber-50 w-[50%]'>
+                <div className='lg:w-[50%] relative lg:overflow-hidden'>
+                    <Image src="/line.svg" alt="line" width={500} height={400} className='hidden lg:block absolute z-2 left-[-70px]' />
+                    <Image src="/line.svg" alt="line" width={500} height={400} className='hidden lg:block absolute z-2 -top-20 -left-17.5' />
+                    <div className="absolute lg:w-120 lg:h-90 w-75 h-50 z-2 lg:top-16 lg:-left-21 -top-30 left-2.5">
+                        <Image src="/illustration.svg" alt="illustration" fill className='object-contain' />
+                    </div>
+                    <div className="absolute w-116 h-142 z-1 top-10 -left-18.75 hidden lg:block">
+                        <Image src="/shadow.svg" alt="shadow" fill className='object-contain' />
+                    </div>
+                    <div className="absolute w-66 h-67 z-1 -top-18.75 left-7 block lg:hidden">
+                        <Image src="/shadow-responsive.svg" alt="shadow" fill className='object-contain' />
+                    </div>
+                </div>
+                <div className="absolute lg:w-50 lg:h-46.5 w-30 h-25 z-3 lg:top-50 lg:-left-23.75 -top-11.25 left-4">
+                    <Image src="/box.svg" alt="box" fill />
+                </div>
+
+                <div className='lg:w-[50%] flex flex-col lg:pl-5 lg:items-start items-center lg:mt-0 mt-16'>
                     <h1 className={`text-[32px] text-[#1E1F36] p-[65px_0px_25px_0px] ${kumbSansFont.className}`}>FAQ</h1>
-                    <Question
-                        question='How many team members can I invite?'
-                        answer='You can invite up to 5 team members.' />
-                    <Question
-                        question='What is the maximum file upload size?'
-                        answer='No more than 2GB. All files in your account must fit your allotted storage space.' />
-                    <Question
-                        question='How do I reset my password?'
-                        answer='Click "forgot password" on the page and follow the instructions.' />
-                    <Question
-                        question='Can I cancel my subscription?'
-                        answer='Yes.' />
-                    <Question
-                        question='Do you provide additional support?'
-                        answer='Yes.' />
+                    <FAQList />
                 </div>
             </div>
         </div>
