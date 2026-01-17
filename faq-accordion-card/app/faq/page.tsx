@@ -18,12 +18,8 @@ const page = () => {
                     <div className="absolute lg:w-120 lg:h-90 w-75 h-50 z-2 lg:top-16 lg:-left-21 -top-30 left-2.5">
                         <Image src="/illustration.svg" alt="illustration" fill className='object-contain' />
                     </div>
-                    <div className="absolute w-116 h-142 z-1 top-10 -left-18.75 hidden lg:block">
-                        <Image src="/shadow.svg" alt="shadow" fill className='object-contain' />
-                    </div>
-                    <div className="absolute w-66 h-67 z-1 -top-18.75 left-7 block lg:hidden">
-                        <Image src="/shadow-responsive.svg" alt="shadow" fill className='object-contain' />
-                    </div>
+                    <Image src="/shadow.svg" alt="shadow" width={0} height={0} className='absolute w-116 h-142 z-1 top-10 -left-17 hidden lg:block' />
+                    <Image src="/shadow-responsive.svg" alt="shadow-responsive" width={0} height={0} className='absolute w-66 h-67 z-1 -top-20 left-7 block lg:hidden' />
                 </div>
                 <div className="absolute lg:w-50 lg:h-46.5 w-30 h-25 z-3 lg:top-50 lg:-left-23.75 -top-11.25 left-4">
                     <Image src="/box.svg" alt="box" fill />
